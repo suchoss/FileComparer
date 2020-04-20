@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Start": {
+      "commandName": "Project",
+      "commandLineArgs": "-p=d:\\temp\\3\\ -g1=generic -g2=a;b;c -o=d:\\temp\\3\\"
+    }
+  }
+}
