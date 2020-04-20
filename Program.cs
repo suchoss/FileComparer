@@ -56,8 +56,8 @@ namespace FileComparer
             HashSet<string> firstGroup = LoadFilesToHashSet(p, g1);
             HashSet<string> secondGroup = LoadFilesToHashSet(p, g2);
 
-            File.WriteAllLines(Path.Combine(o,"missingInFirst"), firstGroup.Except(secondGroup));
-            File.WriteAllLines(Path.Combine(o, "missingInSecond"), secondGroup.Except(firstGroup));
+            File.WriteAllLines(Path.Combine(o,"missingInSecond"), firstGroup.Except(secondGroup));
+            File.WriteAllLines(Path.Combine(o, "missingInFirst"), secondGroup.Except(firstGroup));
 
             Console.WriteLine("Done!");
 
