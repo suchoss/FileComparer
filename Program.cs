@@ -24,6 +24,10 @@ namespace FileComparer
             File.WriteAllLines(
                 Path.Combine(inputs.outputDir, "missingInFirst"),
                 secondGroup.Except(firstGroup));
+            File.WriteAllLines(
+                Path.Combine(inputs.outputDir, "intersectBoth"),
+                firstGroup.Intersect(secondGroup));
+
 
             Console.WriteLine("Done!");
 
@@ -43,9 +47,10 @@ namespace FileComparer
   remark: g2 is always reduced about files contained in g1
 ----
 This app loads unique rows from the first group and compares them with unique rows from the second group.
-Output contains two files:
+Output contains three files:
 missingInFirst - rows which are not contained in first group
-missingInSecond - rows which are not contained in second group");
+missingInSecond - rows which are not contained in second group
+intersectBoth - rows which are the same in both groups");
         }
 
         private static string[] SplitGroup(string input)
